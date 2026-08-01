@@ -1,21 +1,4 @@
-/* Retract Radar - base styles */
+/* Retract Radar - custom styles supplementing Tailwind utility classes */
 * {
   box-sizing: border-box;
-}
-
-body {
-  margin: 0;
-  font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
-  background-color: #0d1117;
-  color: #e6edf3;
-}
-
-header {
-  padding: 1.5rem;
-  text-align: center;
-  border-bottom: 1px solid #30363d;
-}
-
-main {
-  padding: 2rem;
 }

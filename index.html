@@ -4,15 +4,65 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Retract Radar</title>
+  <script src="https://cdn.tailwindcss.com"></script>
   <link rel="stylesheet" href="style.css" />
 </head>
-<body>
-  <header>
-    <h1>Retract Radar</h1>
+<body class="bg-slate-950 text-slate-100 min-h-screen">
+  <!-- Hero section -->
+  <header class="bg-gradient-to-b from-slate-900 to-slate-950 border-b border-slate-800">
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-24 text-center">
+      <h1 class="text-4xl sm:text-5xl font-extrabold tracking-tight">
+        Retract <span class="text-red-500">Radar</span>
+      </h1>
+      <p class="mt-4 text-base sm:text-lg text-slate-400 max-w-2xl mx-auto">
+        Search and explore retracted scientific publications.
+      </p>
+
+      <!-- Search bar -->
+      <div class="mt-10 max-w-2xl mx-auto">
+        <label for="search-input" class="sr-only">Search retractions</label>
+        <div class="relative">
+          <span class="pointer-events-none absolute inset-y-0 left-0 flex items-center pl-4 text-slate-400">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-4.35-4.35m1.35-5.15a7 7 0 11-14 0 7 7 0 0114 0z" />
+            </svg>
+          </span>
+          <input
+            id="search-input"
+            type="search"
+            placeholder="Search by title, DOI, or topic..."
+            class="w-full rounded-xl bg-slate-900 border border-slate-700 py-4 pl-12 pr-4 text-lg text-slate-100 placeholder-slate-500 shadow-lg focus:outline-none focus:ring-2 focus:ring-red-500 focus:border-red-500"
+          />
+        </div>
+
+        <!-- Filter dropdowns -->
+        <div class="mt-4 flex flex-col sm:flex-row gap-3 justify-center">
+          <select
+            id="publisher-filter"
+            class="w-full sm:w-56 rounded-lg bg-slate-900 border border-slate-700 py-3 px-4 text-slate-100 focus:outline-none focus:ring-2 focus:ring-red-500 focus:border-red-500"
+          >
+            <option value="">All Publishers</option>
+          </select>
+
+          <select
+            id="year-filter"
+            class="w-full sm:w-56 rounded-lg bg-slate-900 border border-slate-700 py-3 px-4 text-slate-100 focus:outline-none focus:ring-2 focus:ring-red-500 focus:border-red-500"
+          >
+            <option value="">All Years</option>
+          </select>
+        </div>
+      </div>
+    </div>
   </header>
-  <main id="app">
-    <p>Welcome to Retract Radar.</p>
+
+  <!-- Results -->
+  <main class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
+    <div
+      id="results-grid"
+      class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6"
+    ></div>
   </main>
+
   <script src="app.js"></script>
 </body>
 </html>
