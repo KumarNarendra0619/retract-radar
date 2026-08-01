@@ -1,4 +1,4 @@
-name: Fetch Retractions
+name: Update Retractions Data
 
 on:
   schedule:
